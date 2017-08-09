@@ -1,0 +1,32 @@
+{
+  "name": "EmployeeDirectory",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "~15.4.0",
+    "react-native": "0.41.2"
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "detox": "^5.5.1",
+    "jest": "18.1.0",
+    "mocha": "^3.5.0",
+    "react-test-renderer": "~15.4.0"
+  },
+  "detox": {
+    "specs": "e2e",
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/EmployeeDirectory.app",
+        "build": "xcodebuild -project ios/EmployeeDirectory.xcodeproj -scheme EmployeeDirectory -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 7 Plus"
+      }
+    }
+  }
+}
